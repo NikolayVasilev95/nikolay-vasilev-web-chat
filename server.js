@@ -3,7 +3,7 @@ var socket = require('socket.io');
 
 //App setup
 var app = express();
-var server = app.listen(4000 || 'https://nikolay-vasilev-web-chat.herokuapp.com/', function () {
+var server = app.listen(4000 || process.env.PORT , function () {
   console.log('Server is up!');
 });
 
