@@ -12,7 +12,7 @@ server.listen(process.env.PORT || 4000 , function () {
 app.use(express.static('public'));
 
 //Socket setup
-var io = socket(server);
+var io = socket.listen(server);
 
 io.on('connection', function (socket) {
   console.log('socket connection', socket.id);
