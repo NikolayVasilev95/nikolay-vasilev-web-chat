@@ -3,7 +3,8 @@ var socket = require('socket.io');
 
 //App setup
 var app = express();
-var server = app.listen(4000 || process.env.PORT , function () {
+var server = require('http').createServer(app);
+server.listen(process.env.PORT || 4000 , function () {
   console.log('Server is up!');
 });
 
