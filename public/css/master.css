@@ -1,0 +1,79 @@
+*{
+  margin: auto;
+  padding: 0px;
+}
+body{
+
+}
+.ChatH1{
+  margin: 15px 0px;
+  text-align: center;
+}
+.ChatH1 h1{
+  color: #bdbdbd;
+}
+.nikolay-chat{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60vh auto;
+  grid-template-areas: "chat-window"
+                       "chat-panel";
+  grid-gap: 10px;
+  width: 60%;
+  background-color: #e0e0e0;
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+  margin-bottom: 30px;
+  padding-top: 0.7em;
+}
+.chat-window{
+  grid-area: chat-window;
+  width: 90%;
+  height: 100%;
+  overflow: auto;
+  background-color: #fafafa;
+  border-radius: 0.4em;
+}
+#output{
+  color: #424242;
+}
+#output strong{
+  color: purple;
+  padding-left: .5em;
+}
+#feedback{
+  color: gray;
+  padding-left: .5em;
+}
+.chat-panel{
+  grid-area: chat-panel;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  background-color: #bdbdbd;
+}
+#handle{
+  width: 90%;
+  padding: 10px 10px;
+  border-radius: 2em;
+}
+#message{
+  width: 90%;
+  padding: 10px 10px;
+  border-radius: 2em;
+}
+#send{
+  width: 90%;
+  margin-bottom: 10px;
+  background-color: #eeeeee;
+  padding: 10px 10px;
+  border-radius: 2em;
+  border: none;
+  font-size: 1.2em;
+  color: #616161;
+  cursor: pointer;
+}
+#send:hover{
+  background-color: #e0e0e0;
+}

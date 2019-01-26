@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Nikolay Vasilev web chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <div class="ChatH1">
+      <h1>Nikolay Vasilev's web chat:</h1>
+    </div>
+    <div class="nikolay-chat">
+      <div class="chat-window">
+        <div id="output"></div>
+        <div id="feedback"></div>
+      </div>
+      <div class="chat-panel">
+        <input id="handle" type="text" placeholder="Handle">
+        <input id="message" type="text" placeholder="Message">
+        <button id="send" type="button" name="button">Send</button>
+      </div>
+    </div>
+    <script src="js/chat.js"></script>
+  </body>
+</html>
