@@ -18,7 +18,7 @@ btn.addEventListener('click', function () {
   });
 });
 
-message.addEventListener('keypress', function () {
+message.addEventListener('textInput', function () {
   socket.emit('typing', handle.value);
 });
 
