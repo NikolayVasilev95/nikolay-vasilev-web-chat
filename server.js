@@ -9,7 +9,7 @@ server.listen(process.env.PORT || 4000 , function () {
 });
 
 //Static files
-app.get(express.static('public'));
+app.use(express.static('public'));
 
 //Socket setup
 var io = socket(server);
