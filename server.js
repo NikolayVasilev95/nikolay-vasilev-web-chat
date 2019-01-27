@@ -1,10 +1,10 @@
 var express = require('express');
+var socket = require('socket.io');
+
+//App setup
 var app = express();
 var server = require('http').createServer(app);
-var io = require('socket.io').listen(server);
-
-//Server setup
-server.listen(process.env.PORT || 3000 , function () {
+server.listen(process.env.PORT || 4000 , function () {
   console.log('Server is up!');
 });
 
@@ -12,9 +12,10 @@ server.listen(process.env.PORT || 3000 , function () {
 app.use(express.static('public'));
 
 //Socket setup
-io.sockets.on('connection', function (socket) {
-  connections.push(socket);
-	console.log('Connected: %s sockets connected', connections.length);
+var io = socket(server);
+
+io.on('connection', function (socket) {
+  console.log('socket connection', socket.id);
 
   //Handle chat event
   socket.on('chat', function (data) {
