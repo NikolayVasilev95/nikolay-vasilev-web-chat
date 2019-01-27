@@ -4,12 +4,12 @@ var socket = require('socket.io');
 //App setup
 var app = express();
 var server = require('http').createServer(app);
-server.listen(process.env.PORT , function () {
+server.listen(process.env.PORT || 4000 , function () {
   console.log('Server is up!');
 });
 
 //Static files
-app.use(express.static('public'));
+app.get(express.static('public'));
 
 //Socket setup
 var io = socket(server);
