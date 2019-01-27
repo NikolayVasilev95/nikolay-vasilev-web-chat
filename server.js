@@ -1,9 +1,9 @@
-var express = require('express');
-var socket = require('socket.io');
+var express = require('express'),
+    http = require('http');
 
 //App setup
 var app = express();
-var server = require('http').createServer(app);
+var server = http.createServer(app);
 server.listen(process.env.PORT || 4000 , function () {
   console.log('Server is up!');
 });
@@ -12,7 +12,7 @@ server.listen(process.env.PORT || 4000 , function () {
 app.use(express.static('public'));
 
 //Socket setup
-var io = socket(server);
+var io = require('socket.io').listen(server);
 
 io.on('connection', function (socket) {
   console.log('socket connection', socket.id);
