@@ -1,28 +1,79 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Power by Nikolay Vasilev! -->
     <meta charset="utf-8">
     <title>Nikolay Vasilev web chat</title>
+    <!-- Awesome Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Socket -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+    <!-- Styles -->
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/LeftSection.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/footer.css">
   </head>
   <body>
+
     <div class="ChatH1">
       <h1>Nikolay Vasilev's web chat:</h1>
     </div>
-    <div class="nikolay-chat">
-      <div class="chat-window">
-        <div id="output"></div>
-        <div id="feedback"></div>
-      </div>
-      <div class="chat-panel">
-        <input id="handle" type="text" placeholder="User name*">
-        <input type="color" id="myColor">
-        <button id="submit" onclick="myFunction()">Submit</button>
-        <input id="message" type="text" placeholder="Message">
-        <button id="send" type="button" name="button">Send</button>
-      </div>
-    </div>
+
+    <main>
+
+      <section class="LeftSection">
+        <article class="OnlineUsersSection">
+          <article class="TopOnlineUsersSection">
+            <h4>Online users:</h4>
+          </article>
+          <article class="MainOnlineUsersSection" id="OnlineUsers">
+          </article>
+        </article>
+      </section>
+
+      <section class="CenterSection">
+        <div class="nikolay-chat">
+          <div class="chat-window">
+            <div id="output"></div>
+            <div id="feedback"></div>
+          </div>
+          <div class="chat-panel">
+            <input id="handle" type="text" placeholder="User name*">
+            <input type="color" id="myColor">
+            <button id="submit" onclick="userColor()">Submit</button>
+            <input id="message" type="text" placeholder="Message">
+            <button id="send" type="button" name="button">Send</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="RightSection">
+        right
+      </section>
+
+    </main>
+
+    <footer>
+
+      <article class="FooterTop">
+        <h4>
+          Note: if you refresh/close the site, chat's history will be deleted.
+        </h4>
+      </article>
+
+      <article class="FooterCopyright">
+        <h6>
+          <span><i class="fas fa-copyright"></i> </span>
+          Nikolay Vasilev's chat. All rights reserved.
+        </h6>
+        <h6>
+          <span><a target="_blank" href="http://nikolay-vasilev.com/">Power by Nikolay Vasilev.</a></span>
+        </h6>
+      </article>
+
+    </footer>
+
     <script src="js/chat.js"></script>
   </body>
 </html>

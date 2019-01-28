@@ -1,0 +1,27 @@
+footer .FooterTop{
+  grid-area: FooterTop;
+  width: 100%;
+  text-align: center;
+}
+footer .FooterCopyright{
+  grid-area: FooterCopyright;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: ". CenterFooterCopyright RightFooterCopyright";
+  width: 100%;
+}
+footer .FooterCopyright h6:nth-child(1){
+  grid-area: CenterFooterCopyright;
+}
+footer .FooterCopyright h6:nth-child(2){
+  grid-area: RightFooterCopyright;
+}
+footer .FooterCopyright h6:nth-child(2) a{
+  text-decoration: none;
+  color: #616161;
+}
+footer .FooterCopyright h6:nth-child(2) a:hover{
+  text-decoration: none;
+  color: black;
+}

@@ -16,6 +16,7 @@ var io = socket(server);
 
 io.on('connection', function (socket) {
   console.log('socket connection', socket.id);
+  console.log('connection :', socket.request.connection._peername);
 
   //Handle chat event
   socket.on('chat', function (data) {
@@ -24,5 +25,8 @@ io.on('connection', function (socket) {
 
   socket.on('typing', function (data) {
     socket.broadcast.emit('typing', data);
+  });
+  socket.on('online', function (data) {
+    io.sockets.emit('online', data);
   });
 });

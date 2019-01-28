@@ -1,0 +1,36 @@
+.OnlineUsersSection{
+  grid-area: OnlineUsersSection;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 25% 75%;
+  grid-template-areas: "TopOnlineUsersSection"
+                       "MainOnlineUsersSection";
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+}
+.TopOnlineUsersSection{
+  grid-area: TopOnlineUsersSection;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #bdbdbd;
+}
+.MainOnlineUsersSection{
+  grid-area: MainOnlineUsersSection;
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+  overflow: auto;
+  text-align: center;
+}
+.MainOnlineUsersSection p{
+  padding-top: 0.5em;
+  font-size: 0.8em;
+}
+.MainOnlineUsersSection p span{
+  color: #00C851;
+  font-size: 1.2em;
+}
