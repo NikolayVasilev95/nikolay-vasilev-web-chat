@@ -3,14 +3,18 @@
   padding: 0px;
 }
 body{
-
+  background-image: url(../img/mainBg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .ChatH1{
   margin: 15px 0px;
   text-align: center;
 }
 .ChatH1 h1{
-  color: #bdbdbd;
+  color: #616161;
 }
 main{
   width: 90%;
