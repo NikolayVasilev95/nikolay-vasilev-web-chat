@@ -10,10 +10,12 @@ body{
   background-size: cover;
 }
 .ChatH1{
-  margin: 15px 0px;
+  width: 90%;
+  margin: 15px auto;
   text-align: center;
 }
 .ChatH1 h1{
+  width: fit-content;
   color: #616161;
 }
 main{
