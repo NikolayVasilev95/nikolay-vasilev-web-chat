@@ -10,7 +10,7 @@ var message = document.getElementById('message'),
     feedback = document.getElementById('feedback'),
     onlineusers = document.getElementById('OnlineUsers'),
     usersubmitbtn = document.getElementById('submit'),
-    usercolor = document.getElementById('myColor');
+    usercolor = 0;
 
 
 //Emit events
@@ -18,11 +18,11 @@ var message = document.getElementById('message'),
 usersubmitbtn.addEventListener('click', function () {
   usersubmitbtn.setAttribute("style", "cursor: not-allowed;");
   usersubmitbtn.disabled = true;
-  handle.setAttribute("style", "cursor: not-allowed;");
   handle.disabled = true;
-  usercolor.value;
-  usercolor.setAttribute("style", "cursor: not-allowed;");
-  usercolor.disabled = true;
+  usercolor = document.getElementById('myColor').value;
+  var disabled;
+  disabled = document.getElementById('myColor').setAttribute("style", "cursor: not-allowed;");
+  disabled = document.getElementById('myColor').disabled = true;
   socket.emit('online', handle.value);
 });
 
@@ -42,7 +42,7 @@ message.addEventListener('textInput', function () {
 socket.on('chat', function (data) {
   message.value = "";
   feedback.innerHTML = "";
-  output.innerHTML += '<p><strong style= "color: '+ x +';">' + data.handle + ': </strong>' + data.message + '</p>';
+  output.innerHTML += '<p><strong style= "color: '+ usercolor +';">' + data.handle + ': </strong>' + data.message + '</p>';
 });
 
 socket.on('typing', function (data) {
