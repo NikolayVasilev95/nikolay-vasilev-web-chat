@@ -19,7 +19,7 @@ body{
   grid-template-areas: "chat-window"
                        "chat-panel";
   grid-gap: 10px;
-  width: 60%;
+  width: 40%;
   background-color: #e0e0e0;
   box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
   margin-bottom: 30px;
@@ -48,22 +48,56 @@ body{
   grid-area: chat-panel;
   width: 100%;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: auto 20% 20%;
   grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "username myColor submitbtn"
+                       "message message message"
+                       "send send send";
   grid-gap: 5px;
   background-color: #bdbdbd;
 }
 #handle{
-  width: 90%;
+  grid-area: username;
+  width: 77%;
   padding: 10px 10px;
   border-radius: 2em;
 }
+#myColor{
+  grid-area: myColor;
+  width: 50%;
+  background-color: #eeeeee;
+  padding: 10px 10px;
+  border-radius: 2em;
+  border: none;
+  font-size: 1.2em;
+  color: #616161;
+  cursor: pointer;
+}
+#myColor:hover{
+  background-color: #e0e0e0;
+}
+#submit{
+  grid-area: submitbtn;
+  width: 50%;
+  background-color: #eeeeee;
+  padding: 10px 10px;
+  border-radius: 2em;
+  border: none;
+  font-size: 0.7em;
+  color: #616161;
+  cursor: pointer;
+}
+#submit:hover{
+  background-color: #e0e0e0;
+}
 #message{
-  width: 90%;
+  grid-area: message;
+  width: 87%;
   padding: 10px 10px;
   border-radius: 2em;
 }
 #send{
+  grid-area: send;
   width: 90%;
   margin-bottom: 10px;
   background-color: #eeeeee;

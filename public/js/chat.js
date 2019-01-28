@@ -7,7 +7,15 @@ var message = document.getElementById('message'),
     handle = document.getElementById('handle'),
     btn = document.getElementById('send'),
     output = document.getElementById('output'),
-    feedback = document.getElementById('feedback');
+    feedback = document.getElementById('feedback'),
+    x = document.getElementById('myColor').value;
+
+//User customs color
+
+function myFunction() {
+  document.getElementById("handle").disabled = true;
+  x = document.getElementById('myColor').value;
+}
 
 //Emit events
 
@@ -27,7 +35,7 @@ message.addEventListener('textInput', function () {
 socket.on('chat', function (data) {
   message.value = "";
   feedback.innerHTML = "";
-  output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '</p>';
+  output.innerHTML += '<p><strong style= "color: '+ x +';">' + data.handle + ': </strong>' + data.message + '</p>';
 });
 
 socket.on('typing', function (data) {
