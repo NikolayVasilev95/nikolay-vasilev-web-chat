@@ -9,17 +9,22 @@ var message = document.getElementById('message'),
     output = document.getElementById('output'),
     feedback = document.getElementById('feedback'),
     onlineusers = document.getElementById('OnlineUsers'),
-    x = document.getElementById('myColor').value;
+    usersubmitbtn = document.getElementById('submit'),
+    usercolor = document.getElementById('myColor');
 
-//User customs color
-
-function userColor() {
-  document.getElementById("handle").disabled = true;
-  x = document.getElementById('myColor').value;
-  socket.emit('online', handle.value);
-}
 
 //Emit events
+
+usersubmitbtn.addEventListener('click', function () {
+  usersubmitbtn.setAttribute("style", "cursor: not-allowed;");
+  usersubmitbtn.disabled = true;
+  handle.setAttribute("style", "cursor: not-allowed;");
+  handle.disabled = true;
+  usercolor.value;
+  usercolor.setAttribute("style", "cursor: not-allowed;");
+  usercolor.disabled = true;
+  socket.emit('online', handle.value);
+});
 
 btn.addEventListener('click', function () {
   socket.emit('chat', {
